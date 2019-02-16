@@ -128,7 +128,7 @@
         .then(res => {
             let users = '';
             for (let i = 0; i < res.users.length; i++) {
-                users += `<option value='${res.users[i].id}'>${res.users[i].name}</option>`;
+                users += `<option value="${res.users[i].id}" ${res.users[i].id === user.id ? 'disabled' : ''}>${res.users[i].name}</option>`;
             }
             document.getElementById('users').innerHTML = users;
         })
@@ -175,6 +175,7 @@
         })
         .catch(e => console);
     }
+
     const user = JSON.parse(localStorage.getItem('user'));
     const token = localStorage.getItem('token');
     document.getElementById('user').innerText = user.name;

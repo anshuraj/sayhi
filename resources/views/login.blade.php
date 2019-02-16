@@ -5,6 +5,17 @@
 </head>
 <body>
     <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
+            <a class="navbar-brand" href="/">Say Hi</a>
+            <a class="btn btn-outline-dark" href="/register">Register</a>
+        </nav>
+        <div class="jumbotron">
+            <h3 class="display-4">Hey there, Wanna say hi to your friend</h3>
+        </div>
+
+        <p>
+        <h3>Login to continue</h3>
+        </p>
         <form>
             <div class="form-group">
                 <label for="email">Email address</label>
@@ -16,6 +27,7 @@
             </div>
             <button type="button" class="btn btn-primary" onclick="login()">Login</button>
         </form>
+        <p>Don't have an account, don't worry we've got you covered <a href="/register">Click here to Register</a></p>
     </div>
     <script>
         function login() {
