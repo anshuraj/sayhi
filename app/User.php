@@ -28,4 +28,8 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'email_verified_at', 'created_at', 'updated_at', 'remember_token'
     ];
+
+    public function AauthAcessToken(){
+        return $this->hasMany('\App\OauthAccessToken');
+    }
 }

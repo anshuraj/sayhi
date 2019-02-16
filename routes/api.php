@@ -17,8 +17,8 @@ Route::post('login', 'Api\UserController@login');
 Route::post('register', 'Api\UserController@register');
 Route::group(['middleware' => 'auth:api'], function(){
     Route::post('details', 'Api\UserController@details');
-    Route::post('users', 'Api\UserController@users');
+    Route::get('users', 'Api\UserController@users');
     Route::post('sayhi', 'Api\UserController@sayhi');
     Route::get('messages', 'Api\UserController@getMessages');
-
+    Route::post('logout','Api\UserController@logout');
 });

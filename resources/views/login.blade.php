@@ -37,7 +37,9 @@
             .then(res => res.json())
             .then(res => {
                 const token = res.success.token;
+                const user = res.success.user;
                 localStorage.setItem('token', token);
+                localStorage.setItem('user', JSON.stringify(user));
                 window.location.href='/dashboard';
             })
             .catch(e => console.log(e));

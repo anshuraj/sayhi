@@ -18,6 +18,7 @@ class UserController extends Controller
         if(Auth::attempt(['email' => request('email'), 'password' => request('password')])){
             $user = Auth::user();
             $success['token'] =  $user->createToken('MyApp')-> accessToken;
+            $success['user'] = $user;
             return response()->json(['success' => $success], $this-> successStatus);
         }
         else{
@@ -68,6 +69,14 @@ class UserController extends Controller
     {
         $users = User::all();
         return response()->json(['users' => $users], $this-> successStatus);
+    }
+
+    public function logout()
+    {
+        if (Auth::check()) {
+            Auth::user()->AauthAcessToken()->delete();
+            return response()->json(['success'=> 'OK']);
+        }
     }
 
     /**
