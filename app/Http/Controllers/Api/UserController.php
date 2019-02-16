@@ -100,7 +100,7 @@ class UserController extends Controller
         $user = Auth::user();
 
         $messages = Message::where('to', $user->getAuthIdentifier())
-            ->with('fromUser')
+            ->with('from')
             ->get();
 
         return response()->json(['messages' => $messages], $this-> successStatus);

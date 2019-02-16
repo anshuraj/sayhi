@@ -27,7 +27,7 @@ class Message extends Model
     /**
      * Get the user associated with the message.
      */
-    public function toUser()
+    public function to()
     {
         return $this->hasOne('App\User', 'id', 'to');
     }
@@ -35,7 +35,7 @@ class Message extends Model
     /**
      * Get the user associated with the message.
      */
-    public function fromUser()
+    public function from()
     {
         return $this->hasOne('App\User', 'id', 'from');
     }
